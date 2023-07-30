@@ -18,6 +18,7 @@
 		83D5481D29B1E3C2003FDE4F /* WeatherAppProj2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5481C29B1E3C2003FDE4F /* WeatherAppProj2UITestsLaunchTests.swift */; };
 		83D5482D29B1E445003FDE4F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D5482C29B1E445003FDE4F /* WeatherViewModel.swift */; };
 		83D5482F29B1E56E003FDE4F /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D5482E29B1E56E003FDE4F /* Cities.json */; };
+		83E910072A77108100292990 /* WeatherTest.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 83E910062A77108100292990 /* WeatherTest.JSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		83D5481C29B1E3C2003FDE4F /* WeatherAppProj2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppProj2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		83D5482C29B1E445003FDE4F /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		83D5482E29B1E56E003FDE4F /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		83E910062A77108100292990 /* WeatherTest.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherTest.JSON; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				83D5482E29B1E56E003FDE4F /* Cities.json */,
 				83D5482C29B1E445003FDE4F /* WeatherViewModel.swift */,
+				83E910062A77108100292990 /* WeatherTest.JSON */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E910072A77108100292990 /* WeatherTest.JSON in Resources */,
 				83D5482F29B1E56E003FDE4F /* Cities.json in Resources */,
 				83D5480629B1E3C2003FDE4F /* LaunchScreen.storyboard in Resources */,
 				83D5480329B1E3C2003FDE4F /* Assets.xcassets in Resources */,
