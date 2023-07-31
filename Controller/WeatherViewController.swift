@@ -40,6 +40,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
         weatherData.loadDataSource()
         configureTable()
         
+        
     }
     
     
@@ -57,11 +58,13 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
         
         navigationController?.pushViewController(detailVC, animated: true)
         
-//        let citySelction = try? weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-//        print(citySelction)
-        
+        let weatherTask = Task {
+            let citySelction = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
+            print(citySelction)
+        }
         
         print(indexPath.row)
+      
         
         
         
