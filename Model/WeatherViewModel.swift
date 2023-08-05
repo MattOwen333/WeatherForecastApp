@@ -67,17 +67,24 @@ class WeatherData {
 
 class DetailViewController : UIViewController, UITextFieldDelegate {
     
-
+    
     
     @IBOutlet weak var detailLable: UILabel!
     
-    var detailText : String?
+    var detailText = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+    detailLable.text = detailText
+}
 }
 
 
 class CustomCell : UITableViewCell {
     
     @IBOutlet weak var cellLable: UILabel!
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 100

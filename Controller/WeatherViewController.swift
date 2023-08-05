@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     
     
     var city: String = "Atlanta"
+    var citySelected: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +55,17 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
+        detailVC.detailText = "TEST"
         print(indexPath.row)
         
+
         navigationController?.pushViewController(detailVC, animated: true)
         
         let weatherTask = Task {
             let citySelction = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
+//            detailVC.detailText = citySelction
             print(citySelction)
+           
         }
         
         print(indexPath.row)
