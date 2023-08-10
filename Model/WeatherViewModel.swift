@@ -10,15 +10,15 @@ import UIKit
 
 
 
-struct Weather: Codable {
+struct Weather: Decodable {
     let temperature, wind, description: String
     let forecast: [Forecast]
 }
-struct Forecast: Codable {
+struct Forecast: Decodable {
     let day, temperature, wind: String
 }
 
-struct CitiesList: Codable {
+struct CitiesList: Decodable {
     let cities: [String]
 }
 
@@ -34,7 +34,7 @@ var weatherData = WeatherData()
 
 class WeatherData {
     
-    func fetchWeatherData(city: String) async throws-> [Forecast]? {
+    func fetchWeatherData(city: String) async throws-> Weather? {
         
         guard let url = URL(string: "https://goweather.herokuapp.com/weather/\(city)")
         else {
@@ -44,7 +44,7 @@ class WeatherData {
         let (data, _) = try await URLSession.shared.data(from: url)
         
         let decoded = try JSONDecoder().decode(Weather.self, from: data)
-        return decoded.forecast
+        return decoded
                       
     }
     
@@ -77,7 +77,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
     
     detailLable.text = detailText
-}
+    }
 }
 
 
