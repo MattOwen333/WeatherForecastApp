@@ -77,6 +77,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
     
     detailLable.text = detailText
+        
     }
 }
 
