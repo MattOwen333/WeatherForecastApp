@@ -63,7 +63,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
             let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
            
             print(citySelection)
-
+            detailVC.weatherContainer = citySelection
         }
         
         print(indexPath.row)
