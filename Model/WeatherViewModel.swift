@@ -61,65 +61,66 @@ class WeatherData {
         print("THIS IS cititesList BUT SORTED:", citiesList)
     }
     
+//    func loadWeatherTest() {
+//        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
+//              let weatherData = try? Data(contentsOf: sourcesURL),
+//              let weatherListData = try? JSONDecoder().decode(Weather.self, from: weatherData) else {
+//            fatalError("Could not find WeatherTest.json")
+//            
+//        }
+//
+//        print("THIS IS WeatherListData BUT SORTED:", weatherListData)
+//    }
+    
 }
 
 //MARK: - Table View Delegate
 
 class DetailViewController : UIViewController, UITextFieldDelegate {
     
+    var weatherContainer: Weather?
     
     
     @IBOutlet weak var detailLable: UILabel!
     
-    var detailText = ""
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(weatherContainer)
+        
+        detailLable.text = "\(weatherContainer)"
+    }
+}
     
-    detailLable.text = detailText
+    
+    class CustomCell : UITableViewCell {
+        
+        @IBOutlet weak var cellLable: UILabel!
+        
+        
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 100
+        }
         
     }
-}
 
-
-class CustomCell : UITableViewCell {
-    
-    @IBOutlet weak var cellLable: UILabel!
     
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
-    }
+    //MARK: - Table View Delegate
     
-}
-
-//MARK: - Table View Delegate
-
-
-
-
-//MARK: - Table View Data Source
-
-//extension WeatherViewController : UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return citiesCount  }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
-//
-//        cell.cellLable.text = citiesList[indexPath.row]
-//
-//        return cell
-//
-//    }
-//
-//
-//
-//  
-//}
-
-
-
-
+    
+    
+    
+    //MARK: - Table View Data Source
+    
+    
+    
+    
+    
+    
+    
 

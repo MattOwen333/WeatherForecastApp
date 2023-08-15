@@ -50,28 +50,23 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     
-    
-    
     {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        detailVC.detailText = "TEST"
+        
         print(indexPath.row)
         
 
         navigationController?.pushViewController(detailVC, animated: true)
         
         let weatherTask = Task {
-            let citySelction = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-            detailVC.detailText = citySelction
-            print(citySelction)
+            let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
            
+            print(citySelection)
+
         }
         
         print(indexPath.row)
-      
-        
-        
         
     }
     
