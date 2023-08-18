@@ -26,10 +26,7 @@ var citiesCount: Int = 0
 var citiesList: [String] = []
 var weatherData = WeatherData()
 
-//== Make fetchWeather a class
-//== give fetchweather an input of a city
-//== indexPath.row value will be given as the city
-//== then passing weather to detail view controller
+
 
 
 class WeatherData {
@@ -82,9 +79,8 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var detailLable: UILabel!
-    
-    
-    
+    @IBOutlet weak var detailLabelWind: UILabel!
+    @IBOutlet weak var detailLabelDescription: UILabel!
     
     
     override func viewDidLoad() {
@@ -92,7 +88,9 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         
         print(weatherContainer)
         
-        detailLable.text = "\(weatherContainer)"
+        detailLable.text = "\(weatherContainer!.temperature)"
+        detailLabelWind.text = "\(weatherContainer!.wind)"
+        detailLabelDescription.text = "\(weatherContainer!.description)"
     }
 }
     
@@ -100,13 +98,15 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     class CustomCell : UITableViewCell {
         
         @IBOutlet weak var cellLable: UILabel!
-        
+
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return 100
         }
         
     }
+
+// Make another Cell Class for [Forecast]
 
     
     

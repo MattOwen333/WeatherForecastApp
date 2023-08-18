@@ -21,14 +21,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="km7-1J-5wv" customClass="CustomCell" customModule="WeatherAppProj2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="km7-1J-5wv" id="nMg-Nm-0sA">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIz-os-gKw">
-                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="353" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -76,7 +76,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWd-Vy-6a2" userLabel="Detail Lable">
-                                <rect key="frame" x="16" y="416" width="361" height="20"/>
+                                <rect key="frame" x="16" y="128" width="361" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQN-5d-gbY">
+                                <rect key="frame" x="16" y="156" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqy-EK-dby">
+                                <rect key="frame" x="16" y="185" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,12 +97,19 @@
                         <viewLayoutGuide key="safeArea" id="H3d-Dr-bz5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="leading" secondItem="lln-L6-Zgv" secondAttribute="leadingMargin" id="FbX-oI-hUY"/>
-                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="trailing" secondItem="lln-L6-Zgv" secondAttribute="trailingMargin" id="Ogz-Bf-DWe"/>
-                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="centerY" secondItem="lln-L6-Zgv" secondAttribute="centerY" id="mEe-8k-TAb"/>
+                            <constraint firstItem="aQN-5d-gbY" firstAttribute="top" secondItem="SWd-Vy-6a2" secondAttribute="bottom" constant="8" id="6F2-2O-z3g"/>
+                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="top" secondItem="H3d-Dr-bz5" secondAttribute="top" constant="69" id="Agv-ds-d9L"/>
+                            <constraint firstItem="aQN-5d-gbY" firstAttribute="leading" secondItem="Jqy-EK-dby" secondAttribute="leading" id="B4u-ac-Ly4"/>
+                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="trailing" secondItem="aQN-5d-gbY" secondAttribute="trailing" id="aDs-0W-dyL"/>
+                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="leading" secondItem="aQN-5d-gbY" secondAttribute="leading" id="b7B-1d-qIt"/>
+                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="leading" secondItem="lln-L6-Zgv" secondAttribute="leadingMargin" id="fJD-VV-kVF"/>
+                            <constraint firstItem="Jqy-EK-dby" firstAttribute="top" secondItem="aQN-5d-gbY" secondAttribute="bottom" constant="8" id="jzU-bR-xZL"/>
+                            <constraint firstItem="SWd-Vy-6a2" firstAttribute="trailing" secondItem="lln-L6-Zgv" secondAttribute="trailingMargin" id="yPF-Uv-9aR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailLabelDescription" destination="Jqy-EK-dby" id="3Vu-Do-4C8"/>
+                        <outlet property="detailLabelWind" destination="aQN-5d-gbY" id="Hfw-r5-v97"/>
                         <outlet property="detailLable" destination="SWd-Vy-6a2" id="R7q-9D-XVp"/>
                     </connections>
                 </viewController>
@@ -113,6 +132,13 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kga-Sr-jv2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oTC-fU-FvA">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="40.458015267175568" y="-34.507042253521128"/>
         </scene>

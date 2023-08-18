@@ -40,37 +40,26 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
         }        // self refers to the current ViewController
         weatherData.loadDataSource()
         configureTable()
-        
-        
     }
     
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    
     {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         
         print(indexPath.row)
         
-
-        navigationController?.pushViewController(detailVC, animated: true)
-        
         let weatherTask = Task {
             let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
            
-            print(citySelection)
+
             detailVC.weatherContainer = citySelection
+            
+            navigationController?.pushViewController(detailVC, animated: true)
         }
         
         print(indexPath.row)
-        
     }
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
