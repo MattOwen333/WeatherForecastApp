@@ -82,6 +82,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailLabelWind: UILabel!
     @IBOutlet weak var detailLabelDescription: UILabel!
     
+    @IBOutlet weak var detailLabelForecast: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         detailLable.text = "\(weatherContainer!.temperature)"
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
+        detailLabelDescription.text = "\(weatherContainer!.forecast)"
     }
 }
     
@@ -106,18 +108,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         
     }
 
-// Make another Cell Class for [Forecast]
 
-    
-    
-    //MARK: - Table View Delegate
-    
-    
-    
-    
-    //MARK: - Table View Data Source
-    
-    
     
     
     
