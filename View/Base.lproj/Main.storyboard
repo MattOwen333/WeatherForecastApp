@@ -21,14 +21,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="km7-1J-5wv" customClass="CustomCell" customModule="WeatherAppProj2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="km7-1J-5wv" id="nMg-Nm-0sA">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIz-os-gKw">
-                                                    <rect key="frame" x="20" y="10.999999999999998" width="353" height="21.333333333333329"/>
+                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -99,6 +99,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcc-Hj-HNT">
+                                <rect key="frame" x="16" y="445" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfp-g6-8vD">
+                                <rect key="frame" x="16" y="474" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H3d-Dr-bz5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -108,11 +121,14 @@
                             <constraint firstItem="H3d-Dr-bz5" firstAttribute="bottom" secondItem="81k-oU-czK" secondAttribute="bottom" constant="381" id="4vT-pI-uwY"/>
                             <constraint firstItem="81k-oU-czK" firstAttribute="centerY" secondItem="lln-L6-Zgv" secondAttribute="centerY" id="64h-RK-jXt"/>
                             <constraint firstItem="SWd-Vy-6a2" firstAttribute="leading" secondItem="lln-L6-Zgv" secondAttribute="leadingMargin" id="6kK-sW-82U"/>
+                            <constraint firstItem="hcc-Hj-HNT" firstAttribute="trailing" secondItem="81k-oU-czK" secondAttribute="trailing" id="Cns-6k-EFb"/>
                             <constraint firstItem="SWd-Vy-6a2" firstAttribute="trailing" secondItem="lln-L6-Zgv" secondAttribute="trailingMargin" id="G7M-Eo-pO3"/>
                             <constraint firstItem="Jqy-EK-dby" firstAttribute="leading" secondItem="81k-oU-czK" secondAttribute="leading" id="Ga5-5c-k9g"/>
                             <constraint firstItem="Jqy-EK-dby" firstAttribute="trailing" secondItem="81k-oU-czK" secondAttribute="trailing" id="M3U-jL-EOL"/>
                             <constraint firstItem="SWd-Vy-6a2" firstAttribute="top" secondItem="H3d-Dr-bz5" secondAttribute="top" constant="69" id="OHq-6t-H7v"/>
                             <constraint firstItem="aQN-5d-gbY" firstAttribute="trailing" secondItem="Jqy-EK-dby" secondAttribute="trailing" id="bgk-JN-9NX"/>
+                            <constraint firstItem="hcc-Hj-HNT" firstAttribute="top" secondItem="81k-oU-czK" secondAttribute="bottom" constant="8" id="g4E-9n-HxC"/>
+                            <constraint firstItem="hcc-Hj-HNT" firstAttribute="leading" secondItem="81k-oU-czK" secondAttribute="leading" id="hbp-zg-lTU"/>
                             <constraint firstItem="aQN-5d-gbY" firstAttribute="leading" secondItem="Jqy-EK-dby" secondAttribute="leading" id="y5y-RI-lgt"/>
                             <constraint firstItem="SWd-Vy-6a2" firstAttribute="trailing" secondItem="aQN-5d-gbY" secondAttribute="trailing" id="yMR-gO-9tc"/>
                             <constraint firstItem="Jqy-EK-dby" firstAttribute="top" secondItem="aQN-5d-gbY" secondAttribute="bottom" constant="8" id="yMS-N6-VR2"/>
@@ -121,6 +137,8 @@
                     <connections>
                         <outlet property="detailLabelDescription" destination="Jqy-EK-dby" id="3Vu-Do-4C8"/>
                         <outlet property="detailLabelForecast" destination="81k-oU-czK" id="qB0-jU-1pa"/>
+                        <outlet property="detailLabelForecastDayThree" destination="Rfp-g6-8vD" id="Bi6-FW-AAc"/>
+                        <outlet property="detailLabelForecastDayTwo" destination="hcc-Hj-HNT" id="g9E-J0-BYB"/>
                         <outlet property="detailLabelWind" destination="aQN-5d-gbY" id="Hfw-r5-v97"/>
                         <outlet property="detailLable" destination="SWd-Vy-6a2" id="R7q-9D-XVp"/>
                     </connections>

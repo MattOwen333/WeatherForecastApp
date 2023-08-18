@@ -84,15 +84,26 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var detailLabelForecast: UILabel!
     
+    @IBOutlet weak var detailLabelForecastDayTwo: UILabel!
+    
+    @IBOutlet weak var detailLabelForecastDayThree: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         print(weatherContainer)
         
         detailLable.text = "\(weatherContainer!.temperature)"
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
-        detailLabelDescription.text = "\(weatherContainer!.forecast)"
+        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
+        detailLabelForecastDayTwo.text = "\(weatherContainer!.forecast[1])"
+        detailLabelForecastDayThree.text = "\(weatherContainer!.forecast[2])"
+        
+        
+        
     }
 }
     
