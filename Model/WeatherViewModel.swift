@@ -81,28 +81,21 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailLable: UILabel!
     @IBOutlet weak var detailLabelWind: UILabel!
     @IBOutlet weak var detailLabelDescription: UILabel!
-    
     @IBOutlet weak var detailLabelForecast: UILabel!
-    
     @IBOutlet weak var detailLabelForecastDayTwo: UILabel!
-    
     @IBOutlet weak var detailLabelForecastDayThree: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         print(weatherContainer)
         
         detailLable.text = "\(weatherContainer!.temperature)"
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
-        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
-        detailLabelForecastDayTwo.text = "\(weatherContainer!.forecast[1])"
-        detailLabelForecastDayThree.text = "\(weatherContainer!.forecast[2])"
-        
-        
+//        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
+//        detailLabelForecastDayTwo.text = "\(weatherContainer!.forecast[1])"
+//        detailLabelForecastDayThree.text = "\(weatherContainer!.forecast[2])"
         
     }
 }
@@ -116,6 +109,16 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return 100
         }
+    }
+
+
+    class WeatherCell : UITableViewCell {
+  
+        
+        @IBOutlet weak var ForecastDetailLabel: UILabel!
+        
+        
+        
         
     }
 

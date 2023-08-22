@@ -79,6 +79,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
         return cell
         
     }
+    
+    
+    //Mark: UIDetailTableViewForecast
+    
+    
 }
 
 
