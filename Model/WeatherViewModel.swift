@@ -58,6 +58,8 @@ class WeatherData {
         print("THIS IS cititesList BUT SORTED:", citiesList)
     }
     
+// Mark: - Incase API is down
+    
 //    func loadWeatherTest() {
 //        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
 //              let weatherData = try? Data(contentsOf: sourcesURL),
@@ -82,8 +84,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailLabelWind: UILabel!
     @IBOutlet weak var detailLabelDescription: UILabel!
     @IBOutlet weak var detailLabelForecast: UILabel!
-    @IBOutlet weak var detailLabelForecastDayTwo: UILabel!
-    @IBOutlet weak var detailLabelForecastDayThree: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

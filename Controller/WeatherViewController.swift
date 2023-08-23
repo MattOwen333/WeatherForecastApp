@@ -51,8 +51,8 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
         
         let weatherTask = Task {
             let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-           
-
+            
+            
             detailVC.weatherContainer = citySelection
             
             navigationController?.pushViewController(detailVC, animated: true)
@@ -67,24 +67,38 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     
     
     //Mark: UITableiewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return citiesCount  }
+
+//    QUESTION FOR ZEPH: in terms of sending the data to the Weathercell I see that I am getting errors however im not sure if I am executing this properly or if the code I have commented out is the proper approach (although not done correctly).
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
         
+        let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
+        
+        weatherCell.ForecastDetailLabel.text = citiesList[indexPath.row]
+        
         cell.cellLable.text = citiesList[indexPath.row]
+        
         
         return cell
         
     }
     
+}
+    
     
     //Mark: UIDetailTableViewForecast
     
     
-}
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
+//
+//        cell.ForecastDetailLabel.text = citiesList[indexPath.row]
+//
+//
+//        return cell
+//
+//    }
 
 
 
