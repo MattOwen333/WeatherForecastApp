@@ -95,9 +95,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
 //        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
-//        detailLabelForecastDayTwo.text = "\(weatherContainer!.forecast[1])"
-//        detailLabelForecastDayThree.text = "\(weatherContainer!.forecast[2])"
-        
+
     }
 }
     
@@ -112,16 +110,16 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
         }
     }
 
-
-    class WeatherCell : UITableViewCell {
-  
-        
-        @IBOutlet weak var ForecastDetailLabel: UILabel!
-        
-        
-        
-        
-    }
+//
+//    class WeatherCell : UITableViewCell {
+//  
+//        
+//        @IBOutlet weak var ForecastDetailLabel: UILabel!
+//        
+//        
+//        
+//        
+//    }
 
 
     

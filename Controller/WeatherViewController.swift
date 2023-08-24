@@ -10,8 +10,14 @@ import UIKit
 class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return citiesList.count
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
     var weatherData = WeatherData()
     
     func configureTable() {
@@ -68,14 +74,14 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     
     //Mark: UITableiewDataSource
 
-//    QUESTION FOR ZEPH: in terms of sending the data to the Weathercell I see that I am getting errors however im not sure if I am executing this properly or if the code I have commented out is the proper approach (although not done correctly).
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
         
-        let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
-        
-        weatherCell.ForecastDetailLabel.text = citiesList[indexPath.row]
+//        let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
+//
+//        weatherCell.ForecastDetailLabel.text = citiesList[indexPath.row]
         
         cell.cellLable.text = citiesList[indexPath.row]
         
@@ -89,21 +95,14 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     
     //Mark: UIDetailTableViewForecast
     
-    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
-//
-//        cell.ForecastDetailLabel.text = citiesList[indexPath.row]
-//
-//
-//        return cell
-//
-//    }
 
 
 
 
-    
+
+//        let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
+//
+//        weatherCell.ForecastDetailLabel.text = citiesList[indexPath.row]
   
     
 
