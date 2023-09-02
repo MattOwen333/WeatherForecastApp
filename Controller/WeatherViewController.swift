@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     
-    var weatherData = WeatherData()
+    var weatherData = WeatherDataViewModel()
     
     func configureTable() {
         tableView.delegate = self
@@ -79,10 +79,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
         
-//        let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
-//
-//        weatherCell.ForecastDetailLabel.text = citiesList[indexPath.row]
-        
+
         cell.cellLable.text = citiesList[indexPath.row]
         
         

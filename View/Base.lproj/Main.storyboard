@@ -21,14 +21,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="km7-1J-5wv" customClass="CustomCell" customModule="WeatherAppProj2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="km7-1J-5wv" id="nMg-Nm-0sA">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIz-os-gKw">
-                                                    <rect key="frame" x="20" y="11.000000000000002" width="353" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                 <rect key="frame" x="0.0" y="295" width="393" height="523"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" id="O75-E1-t7P" customClass="WeatherCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" id="O75-E1-t7P" customClass="ForecastCell" customModule="WeatherAppProj2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O75-E1-t7P" id="0u1-pf-2Yr">
@@ -96,7 +96,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ForecastDetailLabel" destination="ii8-FI-id7" id="WmR-UD-eDn"/>
+                                            <outlet property="ForecastCell" destination="ii8-FI-id7" id="6JB-VU-WrV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -142,6 +142,7 @@
                         <outlet property="detailLabelDescription" destination="dBZ-LU-Q89" id="9iz-pA-fBy"/>
                         <outlet property="detailLabelWind" destination="F6J-DQ-HI5" id="bBn-Jk-iFo"/>
                         <outlet property="detailLable" destination="NuQ-px-eoH" id="qxv-jk-j95"/>
+                        <outlet property="detailTableView" destination="NSg-zw-a4r" id="tks-On-WOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Aa-VS-MpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

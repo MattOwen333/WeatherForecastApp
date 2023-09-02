@@ -24,12 +24,12 @@ struct CitiesList: Decodable {
 
 var citiesCount: Int = 0
 var citiesList: [String] = []
-var weatherData = WeatherData()
+var weatherData = WeatherDataViewModel()
 
 
 
 
-class WeatherData {
+class WeatherDataViewModel {
     
     func fetchWeatherData(city: String) async throws-> Weather? {
         
@@ -75,7 +75,42 @@ class WeatherData {
 
 //MARK: - Table View Delegate
 
-class DetailViewController : UIViewController, UITextFieldDelegate {
+class DetailViewController : UIViewController, UITextFieldDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return weatherContainer!.forecast.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =
+        tableView.dequeueReusableCell(withIdentifier: "ForecastCell" as! ForecastCell)
+        
+        cell.ForecastCell.text = weatherContainer
+        
+        
+        return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
+//
+//
+//        cell.cellLable.text = citiesList[indexPath.row]
+//
+//
+//        return cell
+//
+//    }
+
+    
+    
+    @IBOutlet weak var detailTableView: UITableView!
+    
+//    func configureTable() {
+//        detailTableView.delegate = self
+//        detailTableView.dataSource = self
+//    }
     
     var weatherContainer: Weather?
     
@@ -83,7 +118,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailLable: UILabel!
     @IBOutlet weak var detailLabelWind: UILabel!
     @IBOutlet weak var detailLabelDescription: UILabel!
-    @IBOutlet weak var detailLabelForecast: UILabel!
+
 
     
     override func viewDidLoad() {
@@ -100,15 +135,9 @@ class DetailViewController : UIViewController, UITextFieldDelegate {
 }
     
     
-    class CustomCell : UITableViewCell {
-        
-        @IBOutlet weak var cellLable: UILabel!
 
-        
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 100
-        }
-    }
+
+    
 
 //
 //    class WeatherCell : UITableViewCell {
