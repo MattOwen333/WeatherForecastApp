@@ -58,7 +58,7 @@ class WeatherDataViewModel {
         print("THIS IS cititesList BUT SORTED:", citiesList)
     }
     
-// Mark: - Incase API is down
+// MARK: - Incase API is down
     
 //    func loadWeatherTest() {
 //        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
@@ -75,19 +75,24 @@ class WeatherDataViewModel {
 
 //MARK: - Table View Delegate
 
-class DetailViewController : UIViewController, UITextFieldDelegate, UITableViewDataSource {
+class DetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherContainer!.forecast.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell =
-        tableView.dequeueReusableCell(withIdentifier: "ForecastCell" as! ForecastCell)
+        tableView.dequeueReusableCell(withIdentifier: "forecastingCell") as! ForecastCell
         
-        cell.ForecastCell.text = weatherContainer
+        cell.forecastingCell.text = weatherContainer?.forecast[indexPath.row]
         
+        
+
         
         return cell
     }
@@ -107,10 +112,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UITableViewD
     
     @IBOutlet weak var detailTableView: UITableView!
     
-//    func configureTable() {
-//        detailTableView.delegate = self
-//        detailTableView.dataSource = self
-//    }
+
     
     var weatherContainer: Weather?
     
@@ -119,7 +121,10 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UITableViewD
     @IBOutlet weak var detailLabelWind: UILabel!
     @IBOutlet weak var detailLabelDescription: UILabel!
 
-
+    func configureDetailTable() {
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,6 +135,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UITableViewD
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
 //        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
+        configureDetailTable()
 
     }
 }
@@ -139,16 +145,7 @@ class DetailViewController : UIViewController, UITextFieldDelegate, UITableViewD
 
     
 
-//
-//    class WeatherCell : UITableViewCell {
-//  
-//        
-//        @IBOutlet weak var ForecastDetailLabel: UILabel!
-//        
-//        
-//        
-//        
-//    }
+
 
 
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class WeatherViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,20 +88,6 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, UITableViewD
     }
     
 }
-    
-    
-    //Mark: UIDetailTableViewForecast
-    
-
-
-
-
-
-//        let weatherCell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell") as! WeatherCell
-//
-//        weatherCell.ForecastDetailLabel.text = citiesList[indexPath.row]
-  
-    
 
 
 

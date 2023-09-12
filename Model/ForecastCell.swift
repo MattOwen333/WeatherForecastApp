@@ -10,9 +10,9 @@ import UIKit
 class ForecastCell : UITableViewCell {
     
 
+    @IBOutlet weak var forecastingCell: UILabel!
     
-    @IBOutlet weak var ForecastCell: UILabel!
-    
+
 }
 
 
