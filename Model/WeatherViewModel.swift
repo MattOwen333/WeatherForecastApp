@@ -78,38 +78,25 @@ class WeatherDataViewModel {
 class DetailViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weatherContainer!.forecast.count
+//        return weatherContainer!.forecast.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell =
         tableView.dequeueReusableCell(withIdentifier: "forecastingCell") as! ForecastCell
-        
-        cell.forecastingCell.text = weatherContainer?.forecast[indexPath.row]
-        
-        
 
-        
+//        cell.forecastingCell.text = weatherContainer?.forecast[indexPath.row]
+
+
+
+
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
-//
-//
-//        cell.cellLable.text = citiesList[indexPath.row]
-//
-//
-//        return cell
-//
-//    }
 
-    
-    
     @IBOutlet weak var detailTableView: UITableView!
     
 
@@ -131,11 +118,13 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
         
         print(weatherContainer)
         
+        configureDetailTable()
+        
         detailLable.text = "\(weatherContainer!.temperature)"
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
 //        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
-        configureDetailTable()
+        
 
     }
 }

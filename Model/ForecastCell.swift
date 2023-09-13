@@ -12,6 +12,11 @@ class ForecastCell : UITableViewCell {
 
     @IBOutlet weak var forecastingCell: UILabel!
     
+    func configureForecastUI(forecast: Forecast){
+        forecastingCell.text = forecast.temperature
+    }
+    
+    
 
 }
 

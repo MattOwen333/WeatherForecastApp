@@ -52,12 +52,10 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
     {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
-        
         print(indexPath.row)
         
         let weatherTask = Task {
             let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-            
             
             detailVC.weatherContainer = citySelection
             
