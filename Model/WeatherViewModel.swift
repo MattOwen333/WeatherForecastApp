@@ -24,9 +24,9 @@ struct CitiesList: Decodable {
 
 var citiesCount: Int = 0
 var citiesList: [String] = []
+
+
 var weatherData = WeatherDataViewModel()
-
-
 
 
 class WeatherDataViewModel {
@@ -60,17 +60,17 @@ class WeatherDataViewModel {
     
 // MARK: - Incase API is down
     
-//    func loadWeatherTest() {
-//        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
-//              let weatherData = try? Data(contentsOf: sourcesURL),
-//              let weatherListData = try? JSONDecoder().decode(Weather.self, from: weatherData) else {
-//            fatalError("Could not find WeatherTest.json")
-//            
-//        }
-//
-//        print("THIS IS WeatherListData BUT SORTED:", weatherListData)
-//    }
-    
+    func loadWeatherTest() {
+
+        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
+              let weatherData = try? Data(contentsOf: sourcesURL),
+              let weatherListData = try? JSONDecoder().decode(Weather.self, from: weatherData) else {
+            fatalError("Could not find WeatherTest.json")
+
+        }
+
+        print("THIS IS WeatherListData BUT SORTED:", weatherListData)
+    }
 }
 
 //MARK: - Table View Delegate
@@ -79,21 +79,18 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return weatherContainer!.forecast.count
-        return 1
+        return weatherContainer!.forecast.count
+   
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell =
-        tableView.dequeueReusableCell(withIdentifier: "forecastingCell") as! ForecastCell
-
-//        cell.forecastingCell.text = weatherContainer?.forecast[indexPath.row]
+        let Forecastcell =
+        tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as! ForecastCell
 
 
 
-
-        return cell
+        return Forecastcell
     }
     
 
@@ -120,11 +117,10 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
         
         configureDetailTable()
         
+        
         detailLable.text = "\(weatherContainer!.temperature)"
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
-//        detailLabelForecast.text = "\(weatherContainer!.forecast[0])"
-        
 
     }
 }

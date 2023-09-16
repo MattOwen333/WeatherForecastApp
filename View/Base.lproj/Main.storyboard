@@ -21,14 +21,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="km7-1J-5wv" customClass="CustomCell" customModule="WeatherAppProj2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="km7-1J-5wv" id="nMg-Nm-0sA">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIz-os-gKw">
-                                                    <rect key="frame" x="20" y="11.000000000000002" width="353" height="20.666666666666671"/>
+                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -75,28 +75,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NSg-zw-a4r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NSg-zw-a4r">
                                 <rect key="frame" x="0.0" y="295" width="393" height="523"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="523" id="xc5-21-3fm"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ForecastCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCell" id="O75-E1-t7P" customClass="ForecastCell" customModule="WeatherAppProj2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O75-E1-t7P" id="0u1-pf-2Yr">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii8-FI-id7">
-                                                    <rect key="frame" x="20" y="11" width="353" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii8-FI-id7">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="353" height="21.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="353" id="9nd-9b-XUr"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ii8-FI-id7" firstAttribute="leading" secondItem="0u1-pf-2Yr" secondAttribute="leadingMargin" id="akE-H9-9iR"/>
+                                                <constraint firstItem="ii8-FI-id7" firstAttribute="top" secondItem="0u1-pf-2Yr" secondAttribute="topMargin" id="d0N-lP-GaS"/>
+                                                <constraint firstItem="ii8-FI-id7" firstAttribute="centerY" secondItem="0u1-pf-2Yr" secondAttribute="centerY" id="iLr-2R-igz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="forecastingCell" destination="ii8-FI-id7" id="Sez-AZ-QJe"/>
+                                            <outlet property="ForecastingCellLabel" destination="ii8-FI-id7" id="5Wp-Vp-yTa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -123,19 +133,18 @@
                         <viewLayoutGuide key="safeArea" id="H3d-Dr-bz5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dBZ-LU-Q89" firstAttribute="trailing" secondItem="F6J-DQ-HI5" secondAttribute="trailing" id="5S1-Cw-mQI"/>
-                            <constraint firstItem="F6J-DQ-HI5" firstAttribute="leading" secondItem="NuQ-px-eoH" secondAttribute="leading" id="7aU-hN-KT8"/>
-                            <constraint firstItem="NSg-zw-a4r" firstAttribute="leading" secondItem="H3d-Dr-bz5" secondAttribute="leading" id="9z6-iq-dGg"/>
-                            <constraint firstItem="NuQ-px-eoH" firstAttribute="leading" secondItem="lln-L6-Zgv" secondAttribute="leadingMargin" id="JeO-lR-Ebd"/>
-                            <constraint firstItem="F6J-DQ-HI5" firstAttribute="top" secondItem="NuQ-px-eoH" secondAttribute="bottom" constant="8" id="MNA-Nq-P8o"/>
-                            <constraint firstItem="NSg-zw-a4r" firstAttribute="centerX" secondItem="lln-L6-Zgv" secondAttribute="centerX" id="Nh2-6z-HKc"/>
-                            <constraint firstItem="NSg-zw-a4r" firstAttribute="bottom" secondItem="H3d-Dr-bz5" secondAttribute="bottom" id="bDy-iv-qwV"/>
-                            <constraint firstItem="F6J-DQ-HI5" firstAttribute="trailing" secondItem="NuQ-px-eoH" secondAttribute="trailing" id="gI5-kH-wMP"/>
-                            <constraint firstItem="NuQ-px-eoH" firstAttribute="top" secondItem="H3d-Dr-bz5" secondAttribute="top" id="s0L-Qh-GhM"/>
-                            <constraint firstItem="NSg-zw-a4r" firstAttribute="top" secondItem="H3d-Dr-bz5" secondAttribute="top" id="s8X-1H-LaM"/>
-                            <constraint firstItem="dBZ-LU-Q89" firstAttribute="leading" secondItem="F6J-DQ-HI5" secondAttribute="leading" id="tr5-ro-0xm"/>
-                            <constraint firstItem="NuQ-px-eoH" firstAttribute="centerX" secondItem="NSg-zw-a4r" secondAttribute="centerX" id="x6J-Ml-1BS"/>
-                            <constraint firstItem="dBZ-LU-Q89" firstAttribute="top" secondItem="F6J-DQ-HI5" secondAttribute="bottom" constant="8" id="y6f-uE-tLD"/>
+                            <constraint firstItem="NuQ-px-eoH" firstAttribute="leading" secondItem="F6J-DQ-HI5" secondAttribute="leading" id="1KA-k4-5xq"/>
+                            <constraint firstItem="F6J-DQ-HI5" firstAttribute="trailing" secondItem="dBZ-LU-Q89" secondAttribute="trailing" id="57S-J1-IBj"/>
+                            <constraint firstItem="dBZ-LU-Q89" firstAttribute="top" secondItem="F6J-DQ-HI5" secondAttribute="bottom" constant="8" id="RbG-di-xKU"/>
+                            <constraint firstItem="NSg-zw-a4r" firstAttribute="leading" secondItem="H3d-Dr-bz5" secondAttribute="leading" id="VxO-f4-osZ"/>
+                            <constraint firstItem="NuQ-px-eoH" firstAttribute="trailing" secondItem="lln-L6-Zgv" secondAttribute="trailingMargin" id="d7u-Hn-T4L"/>
+                            <constraint firstItem="dBZ-LU-Q89" firstAttribute="centerX" secondItem="NSg-zw-a4r" secondAttribute="centerX" id="fFq-OM-71B"/>
+                            <constraint firstItem="F6J-DQ-HI5" firstAttribute="leading" secondItem="dBZ-LU-Q89" secondAttribute="leading" id="pms-kn-1JR"/>
+                            <constraint firstItem="NuQ-px-eoH" firstAttribute="top" secondItem="H3d-Dr-bz5" secondAttribute="top" id="rbi-iI-D2F"/>
+                            <constraint firstItem="F6J-DQ-HI5" firstAttribute="top" secondItem="NuQ-px-eoH" secondAttribute="bottom" constant="8" id="sOG-QW-thB"/>
+                            <constraint firstItem="NSg-zw-a4r" firstAttribute="bottom" secondItem="H3d-Dr-bz5" secondAttribute="bottom" id="un5-Je-xx7"/>
+                            <constraint firstItem="NuQ-px-eoH" firstAttribute="trailing" secondItem="F6J-DQ-HI5" secondAttribute="trailing" id="v3C-J0-mVM"/>
+                            <constraint firstItem="NuQ-px-eoH" firstAttribute="leading" secondItem="lln-L6-Zgv" secondAttribute="leadingMargin" id="xRk-z2-9z1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -164,13 +173,6 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kga-Sr-jv2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oTC-fU-FvA">
-                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </objects>
             <point key="canvasLocation" x="40.458015267175568" y="-34.507042253521128"/>
         </scene>

@@ -44,8 +44,10 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
                 
             }
         }        // self refers to the current ViewController
+        weatherData.loadWeatherTest()
         weatherData.loadDataSource()
         configureTable()
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -56,6 +58,9 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
         
         let weatherTask = Task {
             let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
+            
+            
+    // MARK: Mind Blowing shit I cant understand
             
             detailVC.weatherContainer = citySelection
             
