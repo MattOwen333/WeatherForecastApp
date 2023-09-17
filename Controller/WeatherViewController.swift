@@ -44,7 +44,7 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
                 
             }
         }        // self refers to the current ViewController
-        weatherData.loadWeatherTest()
+//        loadWeatherTest()
         weatherData.loadDataSource()
         configureTable()
         

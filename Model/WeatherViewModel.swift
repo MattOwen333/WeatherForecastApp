@@ -42,7 +42,7 @@ class WeatherDataViewModel {
         
         let decoded = try JSONDecoder().decode(Weather.self, from: data)
         return decoded
-                      
+        
     }
     
     func loadDataSource() {
@@ -57,21 +57,22 @@ class WeatherDataViewModel {
         citiesList = citiesListData.cities.sorted()
         print("THIS IS cititesList BUT SORTED:", citiesList)
     }
+}
     
 // MARK: - Incase API is down
     
-    func loadWeatherTest() {
+//    func loadWeatherTest() {
+//
+//        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
+//              let weatherData = try? Data(contentsOf: sourcesURL),
+//              let weatherListData = try? JSONDecoder().decode(Weather.self, from: weatherData) else {
+//            fatalError("Could not find WeatherTest.json")
+//
+//        }
+//
+//        print("THIS IS WeatherListData BUT SORTED:", weatherListData)
+//    }
 
-        guard let sourcesURL = Bundle.main.url(forResource: "WeatherTest", withExtension: "json"),
-              let weatherData = try? Data(contentsOf: sourcesURL),
-              let weatherListData = try? JSONDecoder().decode(Weather.self, from: weatherData) else {
-            fatalError("Could not find WeatherTest.json")
-
-        }
-
-        print("THIS IS WeatherListData BUT SORTED:", weatherListData)
-    }
-}
 
 //MARK: - Table View Delegate
 
