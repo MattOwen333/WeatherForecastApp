@@ -9,11 +9,13 @@ import UIKit
 
 class ForecastCell : UITableViewCell {
     
-
+    @IBOutlet weak var ForecastCellLabelWind: UILabel!
+    
     @IBOutlet weak var ForecastingCellLabel: UILabel!
     
     func configureForecastUI(forecast: Forecast){
-        ForecastingCellLabel.text = "forecast.temperature"
+        ForecastingCellLabel.text = forecast.temperature
+        ForecastCellLabelWind.text = forecast.wind
         
         
     }
