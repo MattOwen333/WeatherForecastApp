@@ -11,10 +11,11 @@ class ForecastCell : UITableViewCell {
     
     @IBOutlet weak var ForecastCellLabelWind: UILabel!
     
-    @IBOutlet weak var ForecastingCellLabel: UILabel!
+    @IBOutlet weak var ForecastingCellLabelTemp: UILabel!
+
     
     func configureForecastUI(forecast: Forecast){
-        ForecastingCellLabel.text = forecast.temperature
+        ForecastingCellLabelTemp.text = forecast.temperature
         ForecastCellLabelWind.text = forecast.wind
         
         

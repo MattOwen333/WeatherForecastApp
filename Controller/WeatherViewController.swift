@@ -53,53 +53,56 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
         
     }
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-        {
-            let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-    
-            print(indexPath.row)
-    
-            let weatherTask = Task {
-                let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-    
-    
-                detailVC.weatherContainer = citySelection
-    
-    
-                navigationController?.pushViewController(detailVC, animated: true)
-            }
-    
-            print(indexPath.row)
-        }
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+//        {
+//            let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//
+//            print(indexPath.row)
+//
+//            let weatherTask = Task {
+//                let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
+//
+//
+//                detailVC.weatherContainer = citySelection
+//
+//
+//                navigationController?.pushViewController(detailVC, animated: true)
+//            }
+//
+//            print(indexPath.row)
+//        }
     
     
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
     
     //MARK: For Dummy Data
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//        
-//        print(indexPath.row)
-//        
-//        let weatherTask = Task {  let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-//            
-//            let mockWeatherContainer = try await
-//            weatherData.loadWeatherTest()
-//            detailVC.weatherContainer =
-//            mockWeatherContainer
-//            navigationController?.pushViewController(detailVC, animated: true)
-//            
-//        }
-//        
-//        print(indexPath.row)
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        print(indexPath.row)
+        
+        let weatherTask = Task {  let citySelection = try await weatherData.loadWeatherTest
+            
+            let mockWeatherContainer = try await
+            weatherData.loadWeatherTest()
+            detailVC.weatherContainer =
+            mockWeatherContainer
+            navigationController?.pushViewController(detailVC, animated: true)
+            
+        }
+        
+        print(indexPath.row)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+        
+    }
     
 
     

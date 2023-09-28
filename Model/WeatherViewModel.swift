@@ -31,9 +31,9 @@ var weatherData = WeatherDataViewModel()
 
 class WeatherDataViewModel {
     
-//    func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description: "mock descripiton", forecast: [ Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test") ]) }
-//
-//    
+    func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description: "mock descripiton", forecast: [ Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test") ]) }
+
+    
     
     func fetchWeatherData(city: String) async throws-> Weather? {
         
@@ -86,28 +86,7 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
         return Forecastcell
     }
     
-    //MARK: For Dummy Data
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//
-//        print(indexPath.row)
-//
-//        let weatherTask = Task {  let citySelection = try await weatherData.fetchWeatherData(city: citiesList[indexPath.row])
-//
-//            let mockWeatherContainer = try await
-//            weatherData.loadWeatherTest()
-//            detailVC.weatherContainer =
-//            mockWeatherContainer
-//            navigationController?.pushViewController(detailVC, animated: true) }
-//        print(indexPath.row) }
-    
-    
-    
-    
-    
-    
-    
-
     @IBOutlet weak var detailTableView: UITableView!
     
 
