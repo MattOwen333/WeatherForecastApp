@@ -9,14 +9,20 @@ import Foundation
 import UIKit
 
 
-
-struct Weather: Decodable {
-    let temperature, wind, description: String
-    let forecast: [Forecast]
-}
-struct Forecast: Decodable {
-    let day, temperature, wind: String
-}
+//
+//struct Weather: Decodable {
+//
+//    var temperature: String
+//    var wind: String
+//    var description: String
+//    var forecast: [Forecast]
+//}
+//struct Forecast: Decodable {
+//
+//    var day: String
+//    var wind: String
+//    var temperature: String
+//}
 
 struct CitiesList: Decodable {
     let cities: [String]
@@ -25,6 +31,34 @@ struct CitiesList: Decodable {
 var citiesCount: Int = 0
 var citiesList: [String] = []
 
+struct Forecast: Decodable {
+    let day: String
+    let wind: String
+    let temperature: String
+}
+
+struct Weather: Decodable {
+    let temperature: String
+    let wind: String
+    let description: String
+    let forecast: [Forecast]
+    
+    enum CodingKeys: String, CodingKey {
+        case temperature, description
+        case wind
+        case forecast
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.temperature = try container.decode(String.self, forKey: .temperature)
+        self.wind = try container.decode(String.self, forKey: .wind)
+        self.description = try container.decode(String.self, forKey: .description)
+        self.forecast = try container.decode([Forecast].self, forKey: .forecast)
+    }
+}
+
 
 var weatherData = WeatherDataViewModel()
 
@@ -32,6 +66,7 @@ var weatherData = WeatherDataViewModel()
 class WeatherDataViewModel {
     
     func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description: "mock descripiton", forecast: [ Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test") ]) }
+    
 
     
     
@@ -86,7 +121,7 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
         return Forecastcell
     }
     
-    
+     
     @IBOutlet weak var detailTableView: UITableView!
     
 
