@@ -35,26 +35,36 @@ struct Forecast: Decodable {
     let day: String
     let wind: String
     let temperature: String
+    
 }
 
 struct Weather: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case temperature
+        case wind
+        case description
+        case forecast
+    }
     let temperature: String
     let wind: String
     let description: String
     let forecast: [Forecast]
-    
-    enum CodingKeys: String, CodingKey {
-        case temperature, description
-        case wind
-        case forecast
-    }
+ 
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+    
         self.temperature = try container.decode(String.self, forKey: .temperature)
+
+      
         self.wind = try container.decode(String.self, forKey: .wind)
+        
+
+        
         self.description = try container.decode(String.self, forKey: .description)
+        
+
+        
         self.forecast = try container.decode([Forecast].self, forKey: .forecast)
     }
 }
@@ -65,7 +75,7 @@ var weatherData = WeatherDataViewModel()
 
 class WeatherDataViewModel {
     
-    func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description: "mock descripiton", forecast: [ Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test"), Forecast(day: "Monday", temperature: "80", wind: "test") ]) }
+    func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description : "mock descripiton", forecast: [ Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test") ]) }
     
 
     
