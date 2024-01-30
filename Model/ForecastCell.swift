@@ -16,7 +16,7 @@ class ForecastCell : UITableViewCell {
     
     func configureForecastUI(forecast: Forecast){
         ForecastingCellLabelTemp.text = forecast.temperature
-        ForecastCellLabelWind.text = forecast.wind
+    ForecastCellLabelWind.text = forecast.wind
         
         
     }
