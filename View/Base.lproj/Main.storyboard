@@ -92,8 +92,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rxM-oh-AOh">
                                                     <rect key="frame" x="20" y="0.0" width="353" height="315"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKm-Ye-9Z9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="259"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHM-hh-0hN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="28"/>
+                                                            <rect key="frame" x="0.0" y="259" width="41.333333333333336" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="FJI-uq-Rdl"/>
                                                             </constraints>
@@ -102,7 +108,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii8-FI-id7" userLabel="Forecasting Cell Label Temp">
-                                                            <rect key="frame" x="0.0" y="28" width="353" height="287"/>
+                                                            <rect key="frame" x="0.0" y="287" width="353" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="353" id="F71-tx-H6o"/>
                                                                 <constraint firstAttribute="height" constant="28" id="dY6-AN-KN4"/>
@@ -121,8 +127,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ForecastCellLabelWind" destination="ZHM-hh-0hN" id="fmZ-Id-WEW"/>
-                                            <outlet property="ForecastingCellLabelTemp" destination="ii8-FI-id7" id="6oH-oU-xFi"/>
+                                            <outlet property="ForecastCellLabelWind" destination="ZHM-hh-0hN" id="Nbw-qh-gTM"/>
+                                            <outlet property="ForecastingCellLabelDate" destination="oKm-Ye-9Z9" id="Cjs-Uq-Jxc"/>
+                                            <outlet property="ForecastingCellLabelTemp" destination="ii8-FI-id7" id="7bB-VP-aug"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

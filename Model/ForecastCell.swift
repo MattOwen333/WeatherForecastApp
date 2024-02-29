@@ -12,28 +12,19 @@ class ForecastCell : UITableViewCell {
     @IBOutlet weak var ForecastCellLabelWind: UILabel!
     
     @IBOutlet weak var ForecastingCellLabelTemp: UILabel!
+    
+    @IBOutlet weak var ForecastingCellLabelDate:            UILabel!
 
+    
     
     func configureForecastUI(forecast: Forecast){
         ForecastingCellLabelTemp.text = forecast.temperature
     ForecastCellLabelWind.text = forecast.wind
         
+        ForecastingCellLabelDate.text = forecast.day
         
     }
     
 }
 
 
-//
-//func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
-//
-//
-//    cell.cellLable.text = citiesList[indexPath.row]
-//
-//
-//    return cell
-//
-//}
-//
-//}

@@ -2,7 +2,6 @@
 //  WeatherViewModel.swift
 //  WeatherAppProj2
 //
-//  Created by Carrie Curtis on 3/3/23.
 //
 
 import Foundation
@@ -18,10 +17,15 @@ struct Weather: Decodable {
     var forecast: [Forecast]
 }
 struct Forecast: Decodable {
-
     var day: String
     var wind: String
     var temperature: String
+
+    enum CodingKeys: String, CodingKey {
+        case day
+        case wind
+        case temperature
+    }
 }
 
 struct CitiesList: Decodable {
@@ -31,55 +35,11 @@ struct CitiesList: Decodable {
 var citiesCount: Int = 0
 var citiesList: [String] = []
 
-//struct Forecast: Decodable {
-//    let day: String
-//    let wind: String
-//    let temperature: String
-//    
-//}
-
-//struct Weather: Decodable {
-//    enum CodingKeys: String, CodingKey {
-//        case temperature
-//        case wind
-//        case description
-//        case forecast
-//    }
-//    let temperature: String
-//    let wind: String
-//    let description: String
-//    let forecast: [Forecast]
-//
-//
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        self.temperature = try container.decode(String.self, forKey: .temperature)
-//
-//
-//        self.wind = try container.decode(String.self, forKey: .wind)
-//
-//
-//
-//        self.description = try container.decode(String.self, forKey: .description)
-//
-//
-//
-//        self.forecast = try container.decode([Forecast].self, forKey: .forecast)
-//    }
-//}
-
-
 var weatherData = WeatherDataViewModel()
-
 
 class WeatherDataViewModel {
     
     func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description : "mock descripiton", forecast: [ Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test") ]) }
-    
-
-    
     
     func fetchWeatherData(city: String) async throws-> Weather? {
         
@@ -152,7 +112,7 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(weatherContainer)
+        print(weatherContainer!)
         
         configureDetailTable()
         
@@ -178,3 +138,41 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
     
     
 
+//struct Forecast: Decodable {
+//    let day: String
+//    let wind: String
+//    let temperature: String
+//
+//}
+
+//struct Weather: Decodable {
+//    enum CodingKeys: String, CodingKey {
+//        case temperature
+//        case wind
+//        case description
+//        case forecast
+//    }
+//    let temperature: String
+//    let wind: String
+//    let description: String
+//    let forecast: [Forecast]
+//
+//
+//
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        self.temperature = try container.decode(String.self, forKey: .temperature)
+//
+//
+//        self.wind = try container.decode(String.self, forKey: .wind)
+//
+//
+//
+//        self.description = try container.decode(String.self, forKey: .description)
+//
+//
+//
+//        self.forecast = try container.decode([Forecast].self, forKey: .forecast)
+//    }
+//}

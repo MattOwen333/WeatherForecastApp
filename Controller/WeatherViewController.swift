@@ -35,9 +35,8 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
         
         Task {
             do {
-                
                 let threeDay = try await weatherData.fetchWeatherData(city: city)
-                print("THIS IS THREEDAY:", threeDay)
+                print("THIS IS THREEDAY:", threeDay!)
             } catch {
                 print(error)
                 print("THE ERROR ON THE CATCH")
