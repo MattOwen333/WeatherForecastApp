@@ -14,14 +14,19 @@ class ForecastCell : UITableViewCell {
     @IBOutlet weak var ForecastingCellLabelTemp: UILabel!
     
     @IBOutlet weak var ForecastingCellLabelDate:            UILabel!
-
+    
+    
     
     
     func configureForecastUI(forecast: Forecast){
         ForecastingCellLabelTemp.text = forecast.temperature
-    ForecastCellLabelWind.text = forecast.wind
+        ForecastCellLabelWind.text = forecast.wind
         
-        ForecastingCellLabelDate.text = forecast.day
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let todayDateString = dateFormatter.string(from: currentDate)
+        ForecastingCellLabelDate.text = todayDateString
         
     }
     

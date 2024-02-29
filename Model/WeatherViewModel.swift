@@ -37,6 +37,8 @@ var citiesList: [String] = []
 
 var weatherData = WeatherDataViewModel()
 
+
+
 class WeatherDataViewModel {
     
     func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description : "mock descripiton", forecast: [ Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test") ]) }
