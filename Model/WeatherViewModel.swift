@@ -82,18 +82,51 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
    
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let Forecastcell =
-        tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as! ForecastCell
-        
-        Forecastcell.configureForecastUI(forecast: weatherContainer!.forecast[indexPath.row])
-        
-      
-
-        return Forecastcell
-    }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
+            let Forecastcell =
+            tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as! ForecastCell
+    
+            let forecast = weatherContainer!.forecast[indexPath.row]
+            Forecastcell.configureForecastUI(forecast: forecast, index: indexPath.row)
+    
+    
+    
+            return Forecastcell
+        }
+    
+    
+    
+//    ORIGINAL CODE 3/25/24
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let Forecastcell =
+//        tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as! ForecastCell
+//
+//        Forecastcell.configureForecastUI(forecast: weatherContainer!.forecast[indexPath.row])
+//
+//
+//
+//        return Forecastcell
+//    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let forecastCell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as? ForecastCell else {
+//            // Handle the case where dequeueReusableCell returns nil
+//            return UITableViewCell()
+//        }
+//
+//        guard let weatherContainer = weatherContainer else {
+//            // Handle the case where weatherContainer is nil
+//            return UITableViewCell()
+//        }
+//
+//        // Pass an array containing a single forecast
+//        forecastCell.configureForecastUI(forecast: [weatherContainer.forecast[indexPath.row]])
+//
+//        return forecastCell
+//    }
+
      
     @IBOutlet weak var detailTableView: UITableView!
     
