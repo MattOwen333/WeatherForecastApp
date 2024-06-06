@@ -64,10 +64,8 @@ class WeatherDataViewModel {
             fatalError("Could not find Cities.json")
             
         }
-        print(citiesListData.cities.sorted() , "THIS IS: citiesListData.cities.count", citiesListData.cities.count)
         citiesCount = citiesListData.cities.count
         citiesList = citiesListData.cities.sorted()
-        print("THIS IS cititesList BUT SORTED:", citiesList)
     }
 }
     
@@ -96,38 +94,6 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
         }
     
     
-    
-//    ORIGINAL CODE 3/25/24
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let Forecastcell =
-//        tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as! ForecastCell
-//
-//        Forecastcell.configureForecastUI(forecast: weatherContainer!.forecast[indexPath.row])
-//
-//
-//
-//        return Forecastcell
-//    }
-    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let forecastCell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell") as? ForecastCell else {
-//            // Handle the case where dequeueReusableCell returns nil
-//            return UITableViewCell()
-//        }
-//
-//        guard let weatherContainer = weatherContainer else {
-//            // Handle the case where weatherContainer is nil
-//            return UITableViewCell()
-//        }
-//
-//        // Pass an array containing a single forecast
-//        forecastCell.configureForecastUI(forecast: [weatherContainer.forecast[indexPath.row]])
-//
-//        return forecastCell
-//    }
-
-     
     @IBOutlet weak var detailTableView: UITableView!
     
 
@@ -157,54 +123,3 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
 }
     
     
-
-
-    
-
-
-
-
-    
-    
-    
-    
-    
-
-//struct Forecast: Decodable {
-//    let day: String
-//    let wind: String
-//    let temperature: String
-//
-//}
-
-//struct Weather: Decodable {
-//    enum CodingKeys: String, CodingKey {
-//        case temperature
-//        case wind
-//        case description
-//        case forecast
-//    }
-//    let temperature: String
-//    let wind: String
-//    let description: String
-//    let forecast: [Forecast]
-//
-//
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        self.temperature = try container.decode(String.self, forKey: .temperature)
-//
-//
-//        self.wind = try container.decode(String.self, forKey: .wind)
-//
-//
-//
-//        self.description = try container.decode(String.self, forKey: .description)
-//
-//
-//
-//        self.forecast = try container.decode([Forecast].self, forKey: .forecast)
-//    }
-//}
