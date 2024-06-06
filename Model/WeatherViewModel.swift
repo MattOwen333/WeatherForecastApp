@@ -41,7 +41,7 @@ var weatherData = WeatherDataViewModel()
 
 class WeatherDataViewModel {
     
-    func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "mock wind speed", description : "mock descripiton", forecast: [ Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test") ]) }
+    func loadWeatherTest() async throws -> Weather { Weather(temperature: "Mock temperature", wind: "Mock wind speed", description : "Mock descripiton", forecast: [ Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test"), Forecast(day: "Monday", wind: "80", temperature: "test") ]) }
     
     func fetchWeatherData(city: String) async throws-> Weather? {
         
@@ -148,14 +148,11 @@ class DetailViewController : UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         print(weatherContainer!)
-        
         configureDetailTable()
-        
         
         detailLable.text = "\(weatherContainer!.temperature)"
         detailLabelWind.text = "\(weatherContainer!.wind)"
         detailLabelDescription.text = "\(weatherContainer!.description)"
-
     }
 }
     

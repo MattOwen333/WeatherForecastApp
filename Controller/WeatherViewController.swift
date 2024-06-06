@@ -9,14 +9,12 @@ import UIKit
 
 class WeatherViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return citiesList.count
     }
     
     
     @IBOutlet weak var tableView: UITableView!
-    
     
     var weatherData = WeatherDataViewModel()
     
@@ -84,18 +82,17 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
         
         print(indexPath.row)
         
-        let weatherTask = Task {  let citySelection = try await weatherData.loadWeatherTest
-            
-            let mockWeatherContainer = try await
-            weatherData.loadWeatherTest()
-            detailVC.weatherContainer =
-            mockWeatherContainer
-            navigationController?.pushViewController(detailVC, animated: true)
-            
+        Task {
+            do {
+                let mockWeatherContainer = try await weatherData.loadWeatherTest()
+                detailVC.weatherContainer = mockWeatherContainer
+                navigationController?.pushViewController(detailVC, animated: true)
+            } catch {
+                print("Error loading weather data: \(error)")
+            }
         }
         
         print(indexPath.row)
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -103,23 +100,7 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
         
     }
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     //Mark: UITableiewDataSource
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
@@ -127,13 +108,9 @@ class WeatherViewController: UIViewController,  UITableViewDelegate, UITableView
         
         cell.cellLable.text = citiesList[indexPath.row]
         
-        
         return cell
         
     }
-    
-
-    
 }
 
 
